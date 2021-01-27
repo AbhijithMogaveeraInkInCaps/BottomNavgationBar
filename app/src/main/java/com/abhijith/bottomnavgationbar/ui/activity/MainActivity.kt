@@ -1,6 +1,5 @@
 package com.abhijith.bottomnavgationbar.ui.activity
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.View
@@ -11,7 +10,6 @@ import androidx.navigation.ui.NavigationUI
 import com.abhijith.bottomnavgationbar.R
 import com.abhijith.bottomnavgationbar.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
