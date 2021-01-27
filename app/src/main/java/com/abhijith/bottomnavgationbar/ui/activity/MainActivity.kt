@@ -21,28 +21,28 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.apply {
             setUpNavigation()
+            makeCreateIconLarge()
         }
     }
-    @SuppressLint("CutPasteId")
-    private fun setUpNavigation() {
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bnv)
+    private fun ActivityMainBinding.setUpNavigation() {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragm) as NavHostFragment?
+
         NavigationUI.setupWithNavController(
-            bottomNavigationView,
+            bnv,
             navHostFragment!!.navController
         )
-        val menuView = findViewById<BottomNavigationView>(R.id.bnv)
-            .getChildAt(0) as BottomNavigationMenuView
-           val i = 2;
-            val iconView = menuView.getChildAt(i).findViewById<View>(R.id.icon)
-            val layoutParams = iconView.layoutParams
-            val displayMetrics = resources.displayMetrics
-            layoutParams.height =
-                TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50f, displayMetrics).toInt()
-            layoutParams.width =
-                TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50f, displayMetrics).toInt()
-            iconView.layoutParams = layoutParams
+    }
+
+    private fun ActivityMainBinding.makeCreateIconLarge() {
+        val menuView = bnv.getChildAt(0) as BottomNavigationMenuView
+        val i = 2;
+        val iconView = menuView.getChildAt(i).findViewById<View>(R.id.icon)
+        val layoutParams = iconView.layoutParams
+        val displayMetrics = resources.displayMetrics
+        layoutParams.height = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50f, displayMetrics).toInt()
+        layoutParams.width = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50f, displayMetrics).toInt()
+        iconView.layoutParams = layoutParams
     }
 
 }
