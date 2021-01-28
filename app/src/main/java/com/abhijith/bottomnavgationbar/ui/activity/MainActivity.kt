@@ -13,7 +13,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    val bottomNavigationView: BottomNavigationView by lazy {
+    private val bottomNavigationView: BottomNavigationView by lazy {
         findViewById(R.id.bnv)
     }
 
@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
     private fun setUpNavigation() {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragm) as NavHostFragment?
-
         NavigationUI.setupWithNavController(
             bottomNavigationView,
             navHostFragment!!.navController
