@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
         android:id="@+id/homeFragment"
         android:enabled="true"
         android:icon="@drawable/ic_home"
         android:title="Home"
         />
+
     <item
         android:id="@+id/exploreFragment"
         android:enabled="true"
         android:icon="@drawable/ic_explore"
         android:title="Explore" />
+
     <item
         android:id="@+id/createFragment"
         android:enabled="true"
-        android:icon="@drawable/ic_plus" />
+        android:icon="@drawable/ic_plus"
+        android:title="" />
 
     <item
         android:id="@+id/subscriptionFragment2"
@@ -27,4 +31,5 @@
         android:enabled="true"
         android:icon="@drawable/ic_library"
         android:title="Library" />
+
 </menu>
