@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".ui.activity.MainActivity">
 
     <fragment
@@ -16,10 +17,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/home_screen_navigation" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <com.abhijith.bottomnavgationbar.ui.activity.CustomBottomNavigation
         android:id="@+id/bnv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/black"
+        app:itemIconTint="@drawable/bottom_nav_color"
+        app:itemTextColor="@drawable/bottom_nav_color"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -13,35 +13,33 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    private val bottomNavigationView: BottomNavigationView by lazy {
+    private val bottomNavigationView: CustomBottomNavigation by lazy {
         findViewById(R.id.bnv)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setUpNavigation()
-        makeCreateIconLarge()
+        bottomNavigationView.setUpWithNavController(supportFragmentManager,object:CustomBottomNavigation.Callback{
+            override fun onExplore() {
 
-    }
+            }
 
-    private fun setUpNavigation() {
-        val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.nav_host_fragm) as NavHostFragment?
-        NavigationUI.setupWithNavController(
-            bottomNavigationView,
-            navHostFragment!!.navController
-        )
-    }
+            override fun onHome() {
 
-    private fun makeCreateIconLarge() {
-        val menuView = bottomNavigationView.getChildAt(0) as BottomNavigationMenuView
-        val i = 2;
-        val iconView = menuView.getChildAt(i).findViewById<View>(R.id.icon)
-        val layoutParams = iconView.layoutParams
-        val displayMetrics = resources.displayMetrics
-        layoutParams.height = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50f, displayMetrics).toInt()
-        layoutParams.width = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50f, displayMetrics).toInt()
-        iconView.layoutParams = layoutParams
+            }
+
+            override fun onCreate() {
+
+            }
+
+            override fun onSubscription() {
+
+            }
+
+            override fun library() {
+
+            }
+        })
     }
 }
