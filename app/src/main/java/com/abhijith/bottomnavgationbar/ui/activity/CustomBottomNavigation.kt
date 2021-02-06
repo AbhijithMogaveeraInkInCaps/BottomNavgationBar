@@ -17,11 +17,10 @@ class CustomBottomNavigation(context: Context, attrs: AttributeSet?) :
         makeCreateIconLarge()
     }
 
-    override fun setOnNavigationItemSelectedListener(listener: OnNavigationItemSelectedListener?) {
-        super.setOnNavigationItemSelectedListener(listener)
-    }
-
     fun setUpWithNavController(fragmentManager: FragmentManager, callback: Callback) {
+        val navHostFragment =
+            fragmentManager.findFragmentById(R.id.nav_host_fragm) as NavHostFragment?
+        NavigationUI.setupWithNavController(this, navHostFragment!!.navController)
         setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.homeFragment -> {
@@ -42,9 +41,6 @@ class CustomBottomNavigation(context: Context, attrs: AttributeSet?) :
             }
             true
         }
-        val navHostFragment =
-            fragmentManager.findFragmentById(R.id.nav_host_fragm) as NavHostFragment?
-        NavigationUI.setupWithNavController(this, navHostFragment!!.navController)
     }
 
     interface Callback {
